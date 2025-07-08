@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Poll Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>📊 Poll Results</h1>
+    <p>Total votes: {{ total }}</p>
+    <p>PSG: {{ psg }} vote(s) – {{ psg_percent }}%</p>
+    <p>Bayern: {{ bayern }} vote(s) – {{ bayern_percent }}%</p>
+
+    <h3>🧑‍🤝‍🧑 Individual Votes:</h3>
+    <ul>
+        {% for name, club in responses.items() %}
+        <li>{{ name }} voted for {{ club }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">← Back to voting</a>
+</body>
+</html>

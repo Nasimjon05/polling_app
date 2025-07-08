@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Club Poll</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>⚽ Which club do you support today?</h1>
+    <form action="/vote" method="POST">
+        <label>Name:</label><br>
+        <input type="text" name="name" required><br><br>
+        <label>Club:</label><br>
+        <select name="club" required>
+            <option value="PSG">PSG</option>
+            <option value="Bayern">Bayern</option>
+        </select><br><br>
+        <input type="submit" value="Vote">
+    </form>
+</body>
+</html>
